@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Bookmark searching</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet/mystyle.css">
+	<script type="text/javascript" src="jscript/funtion.js"></script>
+	<script type="text/javascript" src="jscript/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"book.json",
+			success:function(data){
+				var str = data.reduce(function(p,item){
+					p+="<li class=\"list\"><div class=\"title\">"+item.title+"</div><div class=\"createDate\">Created@"+item.created+"</div></li>";
+					return p;
+				},"");
+				$("ul").html(str);
+			}
+		})
+	 </script>
+	
+</head>
+<body>
+	<article>
+		<div>
+			<ul>
+			</ul>
+		</div>
+	</article>
+</body>
+</html>
