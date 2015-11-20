@@ -1,7 +1,7 @@
 $(function(){
     var lowerCase = new Array();
     var $jsontip = $("#jsonTip");
-    $.getJSON("data/bookmarks.json",function(data){
+    $.getJSON("bookmarks.json",function(data){
         var strHtml = "";//存储数据的变量
         $jsontip.empty();//清空内容
         $.each(data,function(infoIndex,info){
